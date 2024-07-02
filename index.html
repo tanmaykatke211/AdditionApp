@@ -1,0 +1,55 @@
+<html>
+	<head>
+		<title>Addition App by Tanmay Katke</title>
+		<style>
+			*{font-size:50px;}
+			body{background-color:azure;}
+			h1{background-color:black; color:white; border-radius:40px; width:50%}
+		</style>
+	</head>
+	<body>
+	<center>
+		<h1>Sum Finder App</h1>
+		<br/>
+		<form onsubmit = "sum()">
+			<input type="number" step="any" placeholder="Enter a number 1" id="num1"/>
+			<br/><br/>
+			<input type="number" step="any" placeholder="Enter a number 2" id="num2"/>
+			<br/><br/>
+			<input type = "submit" value="Find Sum"/>
+			<br/><br/>
+			<h2 id="msg"></msg>
+		</form>
+		<script>
+			function sum()
+			{
+				event.preventDefault();
+				let num1 = document.getElementById("num1");
+				let num2 = document.getElementById("num2");
+				let msg = document.getElementById("msg");
+
+				if (num1.value === "")
+				{
+					alert("Number 1 field is blank.");
+					msg.innerHTML= "";
+					num.focus();
+					return;
+				}
+				if (num2.value === "")
+				{
+					alert("Number 2 field is blank.");
+					msg.innerHTML= "";
+					num.focus();
+					return;
+				}
+
+				let n1 = parseFloat(num1.value);
+				let n2 = parseFloat(num2.value);
+				let r = n1 + n2;
+				let ans = "Sum = " + r.toFixed(2);
+				msg.innerHTML = ans;
+			}
+		</script>	
+	</center>
+	</body>
+</html>
